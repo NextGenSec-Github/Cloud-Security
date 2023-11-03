@@ -25,8 +25,8 @@ def call_api(api_id: str, api_key=None):
     return response
 ```
 
-Sample Python code with SigV4:
-```
+### Sample Python code with SigV4:
+```python
 # Simplifies making Amazon SigV4 calls with the python requests library
 from aws_requests_auth.boto_utils import BotoAWSRequestsAuth
 def call_api(api_id: str, api_key=None): 
