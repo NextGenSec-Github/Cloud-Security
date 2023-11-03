@@ -12,13 +12,13 @@ Zero-Trust security is a framework that assumes no entity—whether inside or ou
 
 ## Quick Start Steps
 
-1. **Step 1:** [Improve your security posture using IAM authorization on the API Gateway](https://github.com/NextGenSec-Github/CloudSecurity/blob/main/aws/Zero-Trust%20on%20AWS/Implementing%20Zero-Trust%20for%20a%20Service-Service%20Architecture/API%20GW%20Resource%20Policies.md)
+1. **Step 1:** [Improve your security posture using IAM authorization on the API Gateway](https://github.com/NextGenSec-Github/CloudSecurity/blob/main/aws/Zero-Trust%20on%20AWS/Implementing%20Zero-Trust%20for%20a%20Service-Service%20Architecture/API%20IAM%20Authorization.md)
 
-2. **Step 2:** [Improve your security posture using API Gateway resource policy]()
+2. **Step 2:** [Improve your security posture using API Gateway resource policy](https://github.com/NextGenSec-Github/CloudSecurity/blob/main/aws/Zero-Trust%20on%20AWS/Implementing%20Zero-Trust%20for%20a%20Service-Service%20Architecture/API%20GW%20Resource%20Policies.md)
 
-3. **Step 3:** [Improve the security posture using VPC endpoint policy]()
+3. **Step 3:** [Improve the security posture using VPC endpoint policy](https://github.com/NextGenSec-Github/CloudSecurity/blob/main/aws/Zero-Trust%20on%20AWS/Implementing%20Zero-Trust%20for%20a%20Service-Service%20Architecture/VPC%20Endpoint%20Policies.md)
 
-4. **Step 4:** [Improve the security posture by tuning the VPC endpoint security group]()
+4. **Step 4:** [Improve the security posture by tuning the VPC endpoint security group](https://github.com/NextGenSec-Github/CloudSecurity/blob/main/aws/Zero-Trust%20on%20AWS/Implementing%20Zero-Trust%20for%20a%20Service-Service%20Architecture/VPC%20Endpoint%20SG.md)
 
 These are just initial steps to get you going. Remember to tailor your security implementation to your specific requirements.
 
