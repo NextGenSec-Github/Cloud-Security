@@ -12,7 +12,7 @@ First, lets configure IAM-based authorization (SigV4) on the API Gateway to enha
 6. Save your selection by choosing `Update`.
 7. Deploy the API by selecting `Deploy API` from the Actions drop-down menu.
 
-To update the Service which is calling your API eg. `EC2`, modify the code to pass request with ![SigV4](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_aws-signing.html) as shown below in python:
+To update the Service which is calling your API eg. `EC2`, modify the code to pass request with [SigV4](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_aws-signing.html) as shown below in python:
 
 ### Sample Python code without SigV4:
 
