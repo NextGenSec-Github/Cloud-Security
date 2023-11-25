@@ -1,0 +1,16 @@
+# Adding Vulnerable Application to CodeCommit Repository
+
+## Introduction
+Welcome to the next chapter of our tutorial series. In this chapter, we will download a vulnerable application from my GitHub repository and push it to our CodeCommit repository in AWS. The vulnerable application we'll be working with is the Java Reachability Playground.
+
+## Steps to Download and Push Vulnerable Application
+
+1. Open the [GitHub page](<GitHub-Repo-Link>) for the Java Reachability Playground.
+2. Download the application by clicking on the "Download" button for the ZIP file.
+3. Once the download is complete, navigate to the folder where the ZIP file is saved and extract its contents.
+4. Copy the extracted folder and paste it into the AWS CodeCommit repository that we cloned in the previous lecture.
+5. Open Git Bash and navigate to the repository using the following commands:
+   ```bash
+   ls
+   cd <first-letter-of-repo>
+
