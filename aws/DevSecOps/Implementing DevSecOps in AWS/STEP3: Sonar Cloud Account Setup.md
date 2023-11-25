@@ -1,4 +1,4 @@
-# SonarCloud Documentation
+# Sonar Cloud
 
 ## Introduction
 
