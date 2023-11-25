@@ -12,5 +12,5 @@ Welcome to the next chapter of our tutorial series. In this chapter, we will dow
 5. Open Git Bash and navigate to the repository using the following commands:
    ```bash
    ls
-   cd <first-letter-of-repo>
+   cd <to the master branch>
 
