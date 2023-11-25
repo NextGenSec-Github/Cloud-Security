@@ -36,4 +36,5 @@ Push the changes to the CodeCommit repository:
 2. Ensure that the correct branch (in this case, Master) is selected.
 3. Confirm that the files from the vulnerable application are visible in the repository.
 
-
+### Great Job💪
+Great job! You have successfully added a vulnerable application to your CodeCommit repository. In the next steps, we will explore how to add a buildspec.yml file to our code repository, enabling us to build the project using CodeBuild. Additionally, we will integrate SonarCloud within our project for enhanced security analysis.
