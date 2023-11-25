@@ -46,8 +46,10 @@ In this tutorial, we will learn how to create a new CodeCommit repository and co
 - Open Git Bash and navigate to the folder where you want to clone the repository.
 - Right-click while holding "Shift" and select "Git Bash here." If not visible,
 - Go to CodeCommit and on the repo click Clone URl for `HTTPS`
-- Then paste it into the Git Bash termina and press enter. 
+- Then paste it into the Git Bash terminal and press enter.
 
+### Conclusion
+Congratulations! You have successfully created a CodeCommit repository, installed Git, and connected Git Bash with AWS CodeCommit. In the next tutorial, we will explore pushing and pulling files to and from the CodeCommit repository.
 
 
 
