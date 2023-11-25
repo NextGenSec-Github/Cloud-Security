@@ -21,7 +21,7 @@ Confirm that you are on the master branch using:
    ```
 Add the new files to the staging area:
    ```bash
-   git
+   git add *
    ```
 Commit the changes:
    ```bash
