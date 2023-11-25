@@ -19,4 +19,21 @@ Confirm that you are on the master branch using:
    ```bash
    git status
    ```
+Add the new files to the staging area:
+   ```bash
+   git
+   ```
+Commit the changes:
+   ```bash
+   git commit -m "Added vulnerable application"
+   ```
+Push the changes to the CodeCommit repository:
+   ```bash
+   git push
+   ```
+### Verifying Changes on AWS CodeCommit
+1. Switch to the AWS CodeCommit repository in the AWS console.
+2. Ensure that the correct branch (in this case, Master) is selected.
+3. Confirm that the files from the vulnerable application are visible in the repository.
+
 
