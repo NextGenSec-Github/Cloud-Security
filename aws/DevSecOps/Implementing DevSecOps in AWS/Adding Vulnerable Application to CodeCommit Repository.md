@@ -13,4 +13,10 @@ Welcome to the next chapter of our tutorial series. In this chapter, we will dow
    ```bash
    ls
    cd <to the master branch>
+   ```
+
+Confirm that you are on the master branch using:
+   ```bash
+   git status
+   ```
 
