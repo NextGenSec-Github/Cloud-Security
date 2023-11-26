@@ -62,7 +62,7 @@ AWS will create the CodeBuild project, and you'll be redirected to the project d
 3. Analyze the results, including code smells, lines of code, and test coverage.
 
 ## Congratulations🥳
-You've successfully set up a CodeBuild project to build and analyze your code using SonarCloud. In the next step, we'll address the issue of test coverage and explore how to enhance the SonarCloud analysis.
+You've successfully set up a CodeBuild project to build and analyze your code using SonarCloud/
 
 
 
