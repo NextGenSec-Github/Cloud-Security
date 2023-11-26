@@ -42,7 +42,9 @@ phases:
 2. Replace the placeholder values in the sonar:sonar command with the actual values obtained from SonarCloud:
 
 • your_project_key: Replace with the SonarCloud project key.
+
 • your_organization: Replace with the SonarCloud organization name.
+
 • your_sonarcloud_token: Replace with the generated SonarCloud security token.
 
 
