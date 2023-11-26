@@ -27,3 +27,26 @@ Ensure you have completed the STEP4, creating the buildspec.yml file in your Cod
 
 3. Copy the generated token and store it in a secure place, as it won't be visible again.
 
+## Updating buildspec.yml with SonarCloud Details
+1. Switch back to your AWS CodeCommit repository.
+
+2. Open the buildspec.yml file.
+```yaml
+version: 0.1
+phases:
+  build:
+    commands:
+      - mvn verify sonar:sonar -Dsonar.projectKey=projectKey -Dsonar.organization=projectOrg -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=token 
+```
+
+2. Replace the placeholder values in the sonar:sonar command with the actual values obtained from SonarCloud:
+
+• your_project_key: Replace with the SonarCloud project key.
+• your_organization: Replace with the SonarCloud organization name.
+• your_sonarcloud_token: Replace with the generated SonarCloud security token.
+
+
+
+
+
+
