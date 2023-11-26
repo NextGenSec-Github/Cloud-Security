@@ -14,7 +14,7 @@ phases:
 ```
 
 ### Explanation:
-Version: Specifies the version of the buildspec.yaml file. In this case, it's set to 0.1.
+#### Version: Specifies the version of the buildspec.yaml file. In this case, it's set to 0.1.
 
 Phases: Describes different phases of the build process. We currently have the build phase.
 
