@@ -50,6 +50,7 @@ phases:
 
 4. Update the author name and email if needed.
 
-5. Commit the changes.
+5. Commit the changes. Now, your buildspec.yml file is configured with the correct SonarCloud details.
+
 
 
