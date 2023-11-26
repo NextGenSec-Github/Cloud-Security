@@ -6,12 +6,12 @@ Welcome to this step where we'll set up an AWS CodeBuild project to build our co
 ## Prerequisites
 Make sure you have completed the previous steps, including creating a buildspec.yml file with the correct values in your CodeCommit repository.
 
-### Creating a CodeBuild Project
+## Creating a CodeBuild Project
 1. Go to the AWS CodeBuild Console.
 
 2. Click on "Create build project."
 
-## 3. Project Configuration:
+### 3. Project Configuration:
 Project name: Enter a unique name, e.g., AWSProjectBuild-1.
 Tags: You can add tags for better identification (optional).
 Source:
