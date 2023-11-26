@@ -13,14 +13,15 @@ phases:
       - mvn verify sonar:sonar -Dsonar.projectKey=projectKey -Dsonar.organization=projectOrg -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=token 
 ```
 
-### Explanation:
-#### Version: Specifies the version of the buildspec.yaml file. In this case, it's set to 0.1.
+#### Explanation:
+Version: Specifies the version of the buildspec.yaml file. In this case, it's set to 0.1.
 
 Phases: Describes different phases of the build process. We currently have the build phase.
 
 Commands: Contains the commands to be executed during the build phase. We're using Maven to run tests and Sonar analysis.
 
 mvn verify: Executes Maven to run tests.
+
 mvn sonar:sonar: Executes the Sonar analysis.
 
 -Dsonar.projectKey: Placeholder for your SonarCloud project key.
