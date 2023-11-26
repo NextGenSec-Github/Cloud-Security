@@ -14,9 +14,10 @@ Make sure you have completed the previous steps, including creating a buildspec.
 ### 3. Project Configuration:
 Project name: Enter a unique name, e.g., AWSProjectBuild-1.
 Tags: You can add tags for better identification (optional).
-Source:
 
-#### Source provider: Select "AWS CodeCommit."
+#### Source:
+Source provider: Select "AWS CodeCommit."
+
 Repository: Choose your CodeCommit repository (e.g., ASecurityGuru-NewRepo).
 
 Branch: Select the branch containing your source code (e.g., master).
