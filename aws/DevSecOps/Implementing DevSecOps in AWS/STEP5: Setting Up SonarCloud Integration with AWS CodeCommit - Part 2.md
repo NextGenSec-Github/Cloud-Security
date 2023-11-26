@@ -52,5 +52,9 @@ phases:
 
 5. Commit the changes. Now, your buildspec.yml file is configured with the correct SonarCloud details.
 
+## Congratulations🥳
+Congratulations! You've successfully created a SonarCloud account, organization, project, and generated a security token. Your buildspec.yml file is now updated with the necessary SonarCloud integration details.
+
+In the next lecture, we'll proceed to set up CodeBuild to compile your code in CodeCommit and analyze it using SonarCloud.
 
 
