@@ -10,18 +10,36 @@ Ensure you have completed the previous lectures, including creating a CodeBuild 
 
 2. Open the AWS Secrets Manager service.
 
-3. Click on "Store a new secret."
+3. Click on `Store a new secret`
 
-4. Provide a key-value pair:
+4. For `Secret type` choose `Other type of secret`
 
-    - Key: Token for Sonar
+5. Provide a key-value pair:
 
-    - Value: Paste in your SonarCloud token.
+   Key: `tokenForSonar`
 
-5. Click on "Next."
+   Value: Paste in your SonarCloud token.
 
-6. Enter a secret name (e.g., sonar-token-secret) and click on "Next."
+6. Click on "Next"
 
-7. (Optional) Enable rotation if needed and click on "Next."
+7. Enter a secret name (e.g., sonar-token-secret) and click on "Next"
 
-8. Review the details and click on "Store."
+8. (Optional) Enable rotation if needed and click on "Next"
+
+9. Review the details and click on "Store"
+
+## Updating buildspec.yml to Use Secrets Manager
+1. Open your buildspec.yml file in the CodeCommit repository.
+
+2. Add the following section to the buildspec.yml file to retrieve the SonarCloud token from Secrets Manager:
+
+```yaml
+    env:
+        secrets-manager:
+          TOKEN: yoursecretname:yourkeyofthesecretvalue               
+```
+
+3. Then in our buildspec.yml, we will replace our actual SonarCloud Token with this variable pointing to our secret in Secrets Manager. So our buildspec.yml file should look something like this:
+
+
+
