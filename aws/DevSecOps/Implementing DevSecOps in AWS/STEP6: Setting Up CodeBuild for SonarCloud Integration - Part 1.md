@@ -11,7 +11,7 @@ Make sure you have completed the previous steps, including creating a buildspec.
 
 2. Click on "Create build project."
 
-### 3. Project Configuration:
+## 3. Project Configuration:
 Project name: Enter a unique name, e.g., AWSProjectBuild-1.
 Tags: You can add tags for better identification (optional).
 Source:
