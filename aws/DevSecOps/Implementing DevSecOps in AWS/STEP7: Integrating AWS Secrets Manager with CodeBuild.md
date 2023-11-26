@@ -34,12 +34,29 @@ Ensure you have completed the previous lectures, including creating a CodeBuild 
 2. Add the following section to the buildspec.yml file to retrieve the SonarCloud token from Secrets Manager:
 
 ```yaml
-    env:
-        secrets-manager:
-          TOKEN: yoursecretname:yourkeyofthesecretvalue               
+env:
+   secrets-manager:
+     TOKEN: yoursecretname:yourkeyofthesecretvalue               
 ```
 
 3. Then in our buildspec.yml, we will replace our actual SonarCloud Token with this variable pointing to our secret in Secrets Manager. So our buildspec.yml file should look something like this:
+
+```yaml
+version: 0.1
+env:
+    secrets-manager:
+      TOKEN: SonarCloud-Secret:TokenForSonar
+phases:
+  build:
+    commands:
+      - mvn verify sonar:sonar -Dsonar.projectKey=yoursonarcloudprojectkey -Dsonar.organization=yoursonarcloudorg -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=$TOKEN
+```
+
+
+
+
+
+
 
 
 
