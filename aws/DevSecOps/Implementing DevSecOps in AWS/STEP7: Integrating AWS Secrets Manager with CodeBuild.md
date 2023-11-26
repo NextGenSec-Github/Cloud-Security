@@ -60,13 +60,24 @@ phases:
 
 2. Click on `Roles`
 
-3. Locate and click on the role associated with your CodeBuild Build Project(e.g., CodeBuild-AWSProjectBuild-1-service-role). Alternatively, you can just go and click on your build project and under `Build Details` scroll down to `Environment` section and click on the service role link
+3. Locate and click on the role associated with your CodeBuild Build Project(e.g., CodeBuild-AWSProjectBuild-1-service-role). Alternatively, you can just go and click on your build project and under `Build Details` scroll down to `Environment` section and click on the service role link.
 
-4. Under "Permissions," click on "Attach policies."
+4. Under `Permissions` click on `Add Permissions` and from the drop down select `Attach Policies`.
 
-Search for "SecretsManagerReadWrite."
+5. Search for `SecretsManagerReadWrite` policy.
 
-Attach the policy SecretsManagerReadWrite to the role.
+6. Attach the `SecretsManagerReadWrite` policy to the role by clicking `Attach Policy`.
 
+## Testing the Build
+1. Go back to the CodeBuild console and click on your CodeBuild Project
+
+2. Trigger a new build in CodeBuild by clicking `Start Build`.
+
+3. Monitor the build logs to ensure it retrieves the SonarCloud token from Secrets Manager.
+
+4. Confirm that the build is successful and SonarCloud analysis is completed.
+
+Congratulations🎉
+Congratulations! You've successfully integrated AWS Secrets Manager with your CodeBuild project, enhancing the security of your sensitive information. In the next step, we'll explore creating a build pipeline for a more streamlined development process.
 
 
