@@ -29,7 +29,7 @@ Ensure you have completed the previous lectures, including creating a CodeBuild 
 9. Review the details and click on "Store"
 
 ## Updating buildspec.yml to Use Secrets Manager
-1. Open your buildspec.yml file in the CodeCommit repository.
+1. Open your buildspec.yml file in the CodeCommit repository and click `Edit`.
 
 2. Add the following section to the buildspec.yml file to retrieve the SonarCloud token from Secrets Manager:
 
