@@ -37,7 +37,7 @@ phases:
 
 2. Switch to the default branch (e.g., master or main).
 
-3. Click on "Add file" and paste the buildspec.yaml code.
+3. Click on "Add file" and paste the `buildspec.yaml` code.
 
 4. Name the file as buildspec.yml.
 
