@@ -39,7 +39,7 @@ phases:
       - mvn verify sonar:sonar -Dsonar.projectKey=projectKey -Dsonar.organization=projectOrg -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=token 
 ```
 
-2. Replace the placeholder values in the sonar:sonar command with the actual values obtained from SonarCloud:
+3. Replace the placeholder values in the sonar:sonar command with the actual values obtained from SonarCloud:
 
 • your_project_key: Replace with the SonarCloud project key.
 
@@ -48,7 +48,8 @@ phases:
 • your_sonarcloud_token: Replace with the generated SonarCloud security token.
 
 
+4. Update the author name and email if needed.
 
-
+5. Commit the changes.
 
 
