@@ -16,7 +16,7 @@ Ensure you have completed the previous lectures, including creating a CodeBuild 
 
 5. Provide a key-value pair:
 
-   Key: `tokenForSonar`
+   Key: `tokenForSonar` or your any key name of your choice
 
    Value: Paste in your SonarCloud token.
 
