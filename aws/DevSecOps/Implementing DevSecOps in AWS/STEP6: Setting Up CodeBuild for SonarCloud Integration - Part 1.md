@@ -19,7 +19,7 @@ Tags: You can add tags for better identification (optional).
 ### Source:
 Source provider: Select "AWS CodeCommit"
 
-Repository: Choose your CodeCommit repository (e.g., ASecurityGuru-NewRepo).
+Repository: Choose your CodeCommit repository (e.g., MyAWSSecurity-Repo).
 
 Branch: Select the branch containing your source code (e.g., master).
 
