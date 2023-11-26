@@ -45,7 +45,7 @@ phases:
 
 6. Commit the changes.
 
-## Good Job
+## Good Job👍 
 Now, your repository is configured to integrate SonarCloud with AWS CodeCommit. In the next lecture, we'll create a SonarCloud account, obtain the project key, organization, and token values, and update the placeholders in this file.
 
 
