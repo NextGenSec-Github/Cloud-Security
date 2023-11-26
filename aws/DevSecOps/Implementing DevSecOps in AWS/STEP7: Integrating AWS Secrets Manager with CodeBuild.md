@@ -45,7 +45,7 @@ env:
 version: 0.1
 env:
     secrets-manager:
-      TOKEN: SonarCloud-Secret:TokenForSonar
+      TOKEN: yoursecretname:yourkeyofthesecretvalue 
 phases:
   build:
     commands:
