@@ -42,3 +42,32 @@ Leave the "Buildspec name" empty since you're using the standard buildspec.yml n
 ### Click on "Create build project."
 
 AWS will create the CodeBuild project, and you'll be redirected to the project details page.
+
+## Starting the Build
+1. Click on "Start build."
+
+2. Review the build details and click on "Start build."
+
+3. Monitor the build logs to ensure the build is progressing without errors.
+
+4. Once the build is complete, you'll find a link to the SonarCloud analysis results. Click on the provided URL to view the analysis on SonarCloud.
+
+## Checking SonarCloud Analysis
+1. Navigate to your SonarCloud Dashboard.
+
+2. Go to "My Projects" to see the analysis results.
+
+3. Analyze the results, including code smells, lines of code, and test coverage.
+
+
+
+
+
+
+
+
+
+
+
+
+
