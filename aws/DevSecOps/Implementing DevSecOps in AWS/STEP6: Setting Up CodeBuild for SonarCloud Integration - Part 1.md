@@ -17,27 +17,28 @@ Project name: Enter a unique name, e.g., AWSProjectBuild-1.
 Tags: You can add tags for better identification (optional).
 
 ### Source:
-Source provider: Select "AWS CodeCommit"
+Source provider: Select `AWS CodeCommit`
 
 Repository: Choose your CodeCommit repository (e.g., MyAWSSecurity-Repo).
 
 Branch: Select the branch containing your source code (e.g., master).
 
 ### Environment:
-Environment image: Choose "Managed image."
+Environment image: Choose `Managed image`
 
-Operating system: Select "Ubuntu."
+Operating system: Select `Ubuntu`
 
-Runtime: Choose "Standard."
+Runtime: Choose `Standard`
 
 Image: Select the latest available image.
 
 ### Service role:
 
-Let AWS create a service role for CodeBuild by selecting "Create a service role in your account."
-Buildspec:
+Let AWS create a service role for CodeBuild by selecting `Create a service role in your account`
 
+### Buildspec:
 Leave the "Buildspec name" empty since you're using the standard buildspec.yml name.
-Click on "Create build project."
+
+### Click on "Create build project."
 
 AWS will create the CodeBuild project, and you'll be redirected to the project details page.
