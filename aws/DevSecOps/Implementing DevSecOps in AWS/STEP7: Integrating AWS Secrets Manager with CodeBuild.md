@@ -52,7 +52,7 @@ phases:
       - mvn verify sonar:sonar -Dsonar.projectKey=yoursonarcloudprojectkey -Dsonar.organization=yoursonarcloudorg -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=$TOKEN
 ```
 
-4. Finally lets enter `Authro Name` and `Email`, and commit the changes!
+4. Finally lets enter `Author Name` and `Email`, and commit the changes!
 
 
 ## Granting CodeBuild Permission to Access Secrets Manager
