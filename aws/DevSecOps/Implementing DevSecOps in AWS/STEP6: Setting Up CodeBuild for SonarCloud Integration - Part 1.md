@@ -11,19 +11,19 @@ Make sure you have completed the previous steps, including creating a buildspec.
 
 2. Click on "Create build project."
 
-### 3. Project Configuration:
+### Project Configuration:
 Project name: Enter a unique name, e.g., AWSProjectBuild-1.
 
 Tags: You can add tags for better identification (optional).
 
-#### Source:
+### Source:
 Source provider: Select "AWS CodeCommit"
 
 Repository: Choose your CodeCommit repository (e.g., ASecurityGuru-NewRepo).
 
 Branch: Select the branch containing your source code (e.g., master).
 
-#### Environment:
+### Environment:
 Environment image: Choose "Managed image."
 
 Operating system: Select "Ubuntu."
@@ -32,7 +32,7 @@ Runtime: Choose "Standard."
 
 Image: Select the latest available image.
 
-#### Service role:
+### Service role:
 
 Let AWS create a service role for CodeBuild by selecting "Create a service role in your account."
 Buildspec:
