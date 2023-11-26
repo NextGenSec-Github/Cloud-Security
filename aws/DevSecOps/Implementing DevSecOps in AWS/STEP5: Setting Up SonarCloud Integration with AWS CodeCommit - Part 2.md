@@ -7,6 +7,6 @@ Welcome to this step where we'll complete the setup for integrating SonarCloud w
 Ensure you have completed the STEP4, creating the buildspec.yml file in your CodeCommit repository.
 
 ## Creating a SonarCloud Account
-Navigate to SonarCloud and sign up using your preferred method (GitHub, Bitbucket, Azure DevOps, or GitLab).
+1. Navigate to [SonarCloud](https://www.sonarsource.com/products/sonarcloud/) and sign up using your preferred method (GitHub, Bitbucket, Azure DevOps, or GitLab).
 
 If using GitHub, log in to your GitHub account when prompted to connect it with SonarCloud.
