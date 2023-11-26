@@ -50,7 +50,7 @@ AWS will create the CodeBuild project, and you'll be redirected to the project d
 
 3. Monitor the build logs to ensure the build is progressing without errors.
 
-4. Once the build is complete, navigate to your SonarCloud Dashboard
+4. Once the build is complete, scroll down near to the bottom of the CodeBuild logs and find the link to your SonarCloud DashBoard. The log line should look something like this: `ANALYSIS SUCCESSFUL, you can find the results at: https://sonarcloud.io/dashboard?id=yourusername`
 
 ## Checking SonarCloud Analysis
 1. Navigate to your SonarCloud Dashboard.
