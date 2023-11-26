@@ -55,7 +55,18 @@ phases:
 4. Finally lets enter `Authro Name` and `Email`, and commit the changes!
 
 
+## Granting CodeBuild Permission to Access Secrets Manager
+1. Open the IAM (Identity and Access Management).
 
+2. Click on `Roles`
+
+3. Locate and click on the role associated with your CodeBuild Build Project(e.g., CodeBuild-AWSProjectBuild-1-service-role). Alternatively, you can just go and click on your build project and under `Build Details` scroll down to `Environment` section and click on the service role link
+
+4. Under "Permissions," click on "Attach policies."
+
+Search for "SecretsManagerReadWrite."
+
+Attach the policy SecretsManagerReadWrite to the role.
 
 
 
