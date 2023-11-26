@@ -31,3 +31,28 @@ mvn sonar:sonar: Executes the Sonar analysis.
 -Dsonar.host.url: SonarCloud URL.
 
 -Dsonar.login: Your SonarCloud authentication token.
+
+### Adding buildspec.yaml to AWS CodeCommit
+1. Navigate to your AWS CodeCommit repository.
+
+2. Switch to the default branch (e.g., master or main).
+
+3. Click on "Add file" and paste the buildspec.yaml code.
+
+4. Name the file as buildspec.yml.
+
+5. Provide your details (name, email) for authorization.
+
+6. Commit the changes.
+
+## Good Job
+Now, your repository is configured to integrate SonarCloud with AWS CodeCommit. In the next lecture, we'll create a SonarCloud account, obtain the project key, organization, and token values, and update the placeholders in this file.
+
+
+
+
+
+
+
+
+
