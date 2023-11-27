@@ -7,4 +7,19 @@ Welcome to this lecture where we'll implement a quality gate within our AWS Code
 Make sure you've completed the previous steps, including setting up AWS CodeBuild, integrating AWS Secrets Manager, and configuring SonarCloud.
 
 ## Implementing a Quality Gate in CodeBuild
-To implement a quality gate in our CodeBuild pipeline, we need to make changes to our buildspec.yml file. Let's go through the required changes:
+To implement a quality gate in our CodeBuild pipeline, we need to make changes to our buildspec.yml file. So you buildspec.yml should look something like this:
+```yaml
+version: 0.1
+env:
+    secrets-manager:
+      TOKEN: firstSecret:tokenForSonar
+phases:
+  build:
+    commands:
+      - mvn verify sonar:sonar -Dsonar.projectKey=sonarcloudprojectkey -Dsonar.organization=sonarcloudorg -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=$TOKEN 
+      - sleep 5
+      - |- 
+        quality_status=$(curl -s -u $TOKEN: https://sonarcloud.io/api/qualitygates/project_status?projectKey=javaprojectaws | jq -r '.projectStatus.status')
+        echo "SonarCloud analysistatus is $quality_status"; 
+        if [ $quality_status = "ERROR" ] ; then exit 1;fi
+```
