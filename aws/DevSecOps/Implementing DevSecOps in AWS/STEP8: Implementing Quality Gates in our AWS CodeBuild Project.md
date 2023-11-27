@@ -27,6 +27,9 @@ phases:
 ## Explanation of Changes:
 
 • Added a sleep 5 command to allow time for SonarCloud to update after running the analysis.
+
 • Introduced a multi-line command using |- for better readability.
+
 • Used curl to query the SonarCloud API for the quality gate status.
+
 • Checked if the quality gate status is "ERROR" and failed the build if true.
