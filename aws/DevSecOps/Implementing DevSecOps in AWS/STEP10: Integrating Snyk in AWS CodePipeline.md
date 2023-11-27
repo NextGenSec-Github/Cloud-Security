@@ -18,11 +18,11 @@ Let's proceed with adding a new stage to our CodePipeline for Snyk SCA:
 
 5. Give the stage a name, such as SnykSCA, and click on "Add Stage."
 
-6. Now, we need to add an action group to this stage. Give the action a name, like SCAAnalysisFromSnyk.
+6. Now, we need to `add an action group` to this stage. Give the action a name, like SCAAnalysisFromSnyk.
 
 7. For "Action provider," choose "Snyk."
 
-8. For "Input artifacts," select your source.
+8. For "Input artifacts," select your `SourceArtifacts`.
 
 9. Connect to Snyk with your GitHub account. Authorize Snyk to use your GitHub account and create an organization on your behalf.
 
