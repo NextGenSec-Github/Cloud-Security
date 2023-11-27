@@ -11,39 +11,58 @@ Ensure you have completed the previous steps, including setting up AWS CodeBuild
 
 2. Open the AWS Management Console and navigate to CodePipeline.
 
-3. Click on "Create pipeline."
+3. Click on `Create pipeline`
 
 ## Pipeline settings:
 
-Enter a pipeline name, e.g., FirstCodePipeline.
-AWS will create a service role for you; no need to create one manually.
-Make sure there are no spaces in the pipeline name.
-Advanced settings:
+1. Enter a pipeline name, e.g., `MyFirstCodePipeline`
 
-Choose whether to store your artifact in the default location or a custom location. For this demo, use the default.
-Use the default AWS managed encryption key. If you have a different key, select "Customer managed key."
-Click on "Next."
+2. AWS will create a service role for you; no need to create one manually.
 
-Add source stage:
+3. Make sure there are no spaces in the pipeline name.
 
-Choose the source provider as AWS CodeCommit.
-Select your repository (e.g., ASecurityGuru-NewRepo).
-Choose the branch (e.g., master).
-AWS CloudWatch Events will trigger the pipeline automatically whenever there is a change.
-Use the default CodePipeline format for the output artifact.
-Click on "Next."
+## Advanced settings:
 
-Add build stage:
+1. Choose whether to store your artifact in the default location or a custom location. For this demo, use the default.
 
-Choose the build provider as AWS CodeBuild.
-Select the CodeBuild project you created.
-Click on "Next."
+2. Use the default AWS managed encryption key. If you have a different key, select `Customer managed key`
 
-Add deploy stage (optional):
+3. Click on "Next."
 
-Skip this stage since we won't be deploying in this lecture.
-Click on "Next."
+##Add source stage:
 
-Review the pipeline information and click on "Create Pipeline."
+1. Choose the source provider as `AWS CodeCommit`.
 
-The pipeline will start executing immediately. You can monitor the progress on the CodePipeline dashboard.
+2. Select your repository.
+
+3. Choose the branch (e.g., master).
+
+4. AWS CloudWatch Events will trigger the pipeline automatically whenever there is a change.
+
+5. Use the default CodePipeline format for the output artifact.
+
+6. Click on "Next."
+
+## Add build stage:
+
+1. Choose the build provider as AWS CodeBuild.
+
+2. Select the CodeBuild project you created.
+
+3. Click on "Next."
+
+## Add deploy stage (optional):
+
+1. Skip this stage since we won't be deploying in this step.
+
+2. Click on "Next."
+
+3. Review the pipeline information and click on "Create Pipeline."
+
+4. The pipeline will start executing immediately. You can monitor the progress on the CodePipeline dashboard.
+
+
+Great Job🕺
+Great Job! You've successfully created an AWS CodePipeline. This pipeline will automatically trigger whenever there's a change in your AWS CodeCommit repository. In the next step, we'll integrate Snyk within this pipeline to enhance our security checks.
+
+
