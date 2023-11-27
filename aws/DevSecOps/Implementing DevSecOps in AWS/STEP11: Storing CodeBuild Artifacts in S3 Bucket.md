@@ -14,19 +14,17 @@ Follow these steps to configure your CodeBuild project to store artifacts in an 
 
 3. Select the CodeBuild project you want to configure (e.g., AWSProjectBuild-1).
 
-4. Click on "Edit."
+4. Click on "Edit." and from the dropdown click on "Artifacts."
 
-5. In the left menu, click on "Artifacts."
+5. On the "Edit artifacts" page, select the "Type" as "Amazon S3."
 
-6. On the "Edit artifacts" page, select the "Type" as "Amazon S3."
+6. Click on the S3 bucket name field to choose an existing S3 bucket.
 
-7. Click on the S3 bucket name field to choose an existing S3 bucket.
-
-8. A list of available S3 buckets will be displayed. Choose the desired S3 bucket for storing artifacts.
+7. A list of available S3 buckets will be displayed. Choose the desired S3 bucket for storing artifacts.
 
 #### Note: Ensure the chosen S3 bucket has the necessary permissions for CodeBuild to upload artifacts.
 
-9. Scroll down to the bottom and click on "Update Artifacts."
+8. Scroll down to the bottom and click on "Update Artifacts."
 
 You'll see a confirmation message: "The Artifacts for the build project have been successfully updated."
 
