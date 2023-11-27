@@ -29,7 +29,7 @@ Ensure you have completed the previous steps, including setting up AWS CodeBuild
 
 3. Click on "Next."
 
-##Add source stage:
+## Add source stage:
 
 1. Choose the source provider as `AWS CodeCommit`.
 
