@@ -14,7 +14,7 @@ Ensure you have the following:
 Let's go through the steps to integrate OWASP ZAP in our AWS DevSecOps pipeline.
 
 ### 1. Update buildspec.yml
-Open the buildspec.yml file in your AWS CodeCommit repository and add the following code, so your buildspec.yml file should look something like this:
+Open the buildspec.yml file in your AWS CodeCommit repository and replace the code, so your buildspec.yml file should look something like this:
 ```yaml
 version: 0.1
 phases:
