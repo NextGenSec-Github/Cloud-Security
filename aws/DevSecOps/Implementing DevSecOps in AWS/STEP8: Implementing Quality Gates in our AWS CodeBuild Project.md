@@ -12,14 +12,14 @@ To implement a quality gate in our CodeBuild pipeline, we need to make changes t
 version: 0.1
 env:
     secrets-manager:
-      TOKEN: firstSecret:tokenForSonar
+      TOKEN: yoursecretname:yourkeyofthesecretvalue
 phases:
   build:
     commands:
       - mvn verify sonar:sonar -Dsonar.projectKey=sonarcloudprojectkey -Dsonar.organization=sonarcloudorg -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=$TOKEN 
       - sleep 5
       - |- 
-        quality_status=$(curl -s -u $TOKEN: https://sonarcloud.io/api/qualitygates/project_status?projectKey=javaprojectaws | jq -r '.projectStatus.status')
+        quality_status=$(curl -s -u $TOKEN: https://sonarcloud.io/api/qualitygates/project_status?projectKey=sonarcloudprojectkey | jq -r '.projectStatus.status')
         echo "SonarCloud analysistatus is $quality_status"; 
         if [ $quality_status = "ERROR" ] ; then exit 1;fi
 ```
