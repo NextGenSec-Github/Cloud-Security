@@ -43,6 +43,8 @@ phases:
    - Set `Where?` to on `Overall Code`
    - And `Quality Gate Fails When`, Operator: `Coverage` is less than `80`, then click `Save Condition`.
 
+4. Make another rule within the quality gate and make it the exact same, however, just change the `operator` to `condition coverage`
+
 4. Ensure the quality gate is set as default by clicking the three dots in the top-right and selecting `Set as Default`.
 
 ## Testing the Quality Gate
