@@ -1,4 +1,4 @@
-#Integrating OWASP ZAP for DAST in AWS DevSecOps Pipeline
+## Integrating OWASP ZAP for DAST in AWS DevSecOps Pipeline
 ## Introduction
 Welcome to this step where we'll integrate OWASP ZAP (Zed Attack Proxy) for Dynamic Application Security Testing (DAST) within our AWS DevSecOps pipeline. By incorporating DAST into our pipeline, we can automatically scan web applications for security vulnerabilities during the build process.
 
