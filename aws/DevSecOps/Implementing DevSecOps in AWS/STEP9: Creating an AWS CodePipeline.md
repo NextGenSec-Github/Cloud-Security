@@ -62,7 +62,7 @@ Ensure you have completed the previous steps, including setting up AWS CodeBuild
 4. The pipeline will start executing immediately. You can monitor the progress on the CodePipeline dashboard.
 
 
-Great Job🕺
+## Great Job🕺
 Great Job! You've successfully created an AWS CodePipeline. This pipeline will automatically trigger whenever there's a change in your AWS CodeCommit repository. In the next step, we'll integrate Snyk within this pipeline to enhance our security checks.
 
 
