@@ -52,7 +52,9 @@ phases:
 
 2. Monitor the build logs for the SonarCloud analysis status.
 
-3. Verify that the build fails if the quality gate status is "ERROR."
+3. Verify that the build fails, the quality gate status should be "ERROR." This shows that the SonarCloud Quality Gate Condition worked as the coverage was under 80%:)
+
+4. Go back to the quality gate section and switch the default quality gate to the SonarWay quality gate.
 
 ## Conclusion🎉
 Congratulations! You've successfully implemented a quality gate in your AWS CodeBuild project using SonarCloud. This ensures that your build fails if SonarCloud identifies code quality or security issues, allowing you to address them before deployment.
