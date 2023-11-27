@@ -37,7 +37,7 @@ Ensure you have completed the previous steps, including setting up AWS CodeBuild
 
 3. Choose the branch (e.g., master).
 
-4. AWS CloudWatch Events will trigger the pipeline automatically whenever there is a change.
+4. For detection type choose AWS CloudWatch Events, it will trigger the pipeline automatically whenever there is a change.
 
 5. Use the default CodePipeline format for the output artifact.
 
