@@ -33,3 +33,24 @@ phases:
 • Used curl to query the SonarCloud API for the quality gate status.
 
 • Checked if the quality gate status is "ERROR" and failed the build if true.
+
+## Configuring Quality Gates in SonarCloud
+1. Open SonarCloud and navigate to your project.
+
+2. Click on "Quality Gates" in the left sidebar.
+
+3. Create a custom quality gate if needed, adding conditions based on your requirements.
+
+4. Ensure the quality gate is set as default.
+
+## Testing the Quality Gate
+1. Trigger a new build in AWS CodeBuild.
+
+2. Monitor the build logs for the SonarCloud analysis status.
+
+3. Verify that the build fails if the quality gate status is "ERROR."
+
+
+
+
+
