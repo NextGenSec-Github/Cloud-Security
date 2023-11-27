@@ -34,4 +34,4 @@ The message also provides the artifacts upload location, indicating that the art
 
 ## Congratulations! 
 You've successfully configured your CodeBuild project to store artifacts in an S3 bucket.
-In the next lecture, we'll integrate OWASP ZAP for dynamic application security testing (DAST) and store the scan reports in the same S3 bucket. Stay tuned for the next lecture.
+In the next step, we'll integrate OWASP ZAP for dynamic application security testing (DAST) and store the scan reports in the same S3 bucket.
