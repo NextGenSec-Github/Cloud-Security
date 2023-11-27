@@ -23,3 +23,10 @@ phases:
         echo "SonarCloud analysistatus is $quality_status"; 
         if [ $quality_status = "ERROR" ] ; then exit 1;fi
 ```
+
+## Explanation of Changes:
+
+• Added a sleep 5 command to allow time for SonarCloud to update after running the analysis.
+• Introduced a multi-line command using |- for better readability.
+• Used curl to query the SonarCloud API for the quality gate status.
+• Checked if the quality gate status is "ERROR" and failed the build if true.
