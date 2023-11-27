@@ -45,9 +45,13 @@ Now Just Commit the Changes!
 Go to AWS CodeBuild and navigate to your CodeBuild project. You should see a new build triggered by your CodePipeline. Observe the progress and logs.
 
 ### Access DAST Report
-Once the build is complete, go to the build details and scroll down to locate the artifacts. You can download the zap_report.html file, which contains the results of the OWASP ZAP scan.
+Once the build is complete, go to the build details and scroll down to locate the artifacts section. You can download the zap_report.html file from the s3 link, which contains the results of the OWASP ZAP scan.
 
 ## Review and Remediate
 Review the ZAP report for identified security vulnerabilities. Work with the development team to remediate the issues. This might involve creating JIRA or ServiceNow tickets for tracking and assigning tasks to the development team.
+
+## Congratulations! 
+You've successfully integrated OWASP ZAP for DAST in your AWS DevSecOps pipeline.
+
 
 
