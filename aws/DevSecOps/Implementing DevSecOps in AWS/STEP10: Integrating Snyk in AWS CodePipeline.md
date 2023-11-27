@@ -41,11 +41,13 @@ Let's proceed with adding a new stage to our CodePipeline for Snyk SCA:
 ## Reviewing Snyk SCA Analysis Results
 - As the pipeline progresses, Snyk will perform SCA analysis on your source code, and you can review the results within the pipeline.
 
-- Once the pipeline build is complete, click on the "SCAAnalysisFromSnyk" action in the pipeline.
+- Once the pipeline build is complete, click on the "SCAAnalysisFromSnyk" action in the pipeline and click on details.
 
 - Review the Snyk SCA analysis results.
 
-- The Snyk test report will be generated, and vulnerabilities in your project dependencies will be identified.
+- The Snyk test report will be generated, and vulnerabilities in your project dependencies will be identified. Should look something like this:
+  ![](https://github.com/NextGenSec-Github/CloudSecurity/blob/main/aws/DevSecOps/Implementing%20DevSecOps%20in%20AWS/CriticalFindings.png?raw=true)
+
 
 ## Congratulations! 
 You've successfully integrated Snyk SCA analysis into your AWS CodePipeline. This helps ensure that your project dependencies are regularly checked for vulnerabilities as part of your CI/CD process.
