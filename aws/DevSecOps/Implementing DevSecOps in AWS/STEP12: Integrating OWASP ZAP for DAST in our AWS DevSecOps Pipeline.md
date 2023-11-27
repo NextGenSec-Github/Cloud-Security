@@ -32,3 +32,10 @@ artifacts:
   files:
     - zap_report.html
 ```
+
+### In this code:
+
+1. We update the system and install necessary utilities (apt-get update, apt-get install -y wget default-jdk).
+2. We download and unzip OWASP ZAP (wget, mkdir, tar).
+3. We navigate to the ZAP directory and execute the ZAP scan with specific parameters (sh zap.sh -quickurl https://www.example.com -quickprogress -quickout zap_report.html).
+4. The resulting zap_report.html is stored in the artifacts.
