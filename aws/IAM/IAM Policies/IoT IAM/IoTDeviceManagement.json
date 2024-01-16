@@ -1,0 +1,28 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+        "iot:DescribeThing",
+        "iot:ListThings",
+        "iot:UpdateThing"
+      ],
+      "Resource": [
+        "arn:aws:iot:us-east-1:123456789012:thing/Device123",
+        "arn:aws:iot:us-east-1:123456789012:thing/Device456"
+      ],
+      "Condition": {
+        "StringEqualsIfExists": {
+          "iot:ThingType": "SmartSensor",
+          "iot:Manufacturer": "ABC Inc.",
+          "iot:FirmwareVersion": "v2.0"
+        }
+      }
+    }
+  ]
+}
+
+}
+"comment":"Users can manage and update IoT devices, but only if they are of type 'SmartSensor,' manufactured by 'ABC Inc', and have firmware version 'v2.0'."
+}

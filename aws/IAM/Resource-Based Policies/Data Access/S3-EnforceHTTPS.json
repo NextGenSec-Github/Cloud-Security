@@ -1,0 +1,25 @@
+{
+    "Version": "2012-10-17",
+    "Id": "Policy1696059299631",
+    "Statement": [
+        {
+            "Sid": "Deny If Not Using HTTPS",
+            "Effect": "Deny",
+            "Principal": "*",
+            "Action": "s3:*",
+            "Resource": "YOUR_S3_BUCKET_ARN/*",
+            "Condition": {
+                "Bool": {
+                    "aws:SecureTransport": "false"
+                }
+            }
+        },
+        {
+            "Sid": "If using HTTPS, Allow",
+            "Effect": "Allow",
+            "Principal": "*",
+            "Action": "s3:*",
+            "Resource": "YOUR_S3_BUCKET_ARN/*"
+        }
+    ]
+}

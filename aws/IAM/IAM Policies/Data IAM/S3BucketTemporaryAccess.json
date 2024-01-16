@@ -1,0 +1,17 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": "s3:*",
+      "Resource": "arn:aws:s3:::my-temp-bucket/*",
+      "Condition": {
+        "StringEquals": {
+          "aws:RequestTag/TemporaryAccess": "true"
+        }
+      }
+    }
+  ]
+}
+
+"comment": "Grants access to an S3 bucket, but only if the request includes a specific tag indicating temporary access."

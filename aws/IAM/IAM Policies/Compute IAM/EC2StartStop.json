@@ -1,0 +1,20 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+        "ec2:StartInstances",
+        "ec2:StopInstances"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "ec2:ResourceTag/Project": "HR"
+        }
+      }
+    }
+  ]
+}
+
+"comment": "Allows users to start and stop EC2 instances, but only if they are tagged with a  'Project' key matching the user's department."

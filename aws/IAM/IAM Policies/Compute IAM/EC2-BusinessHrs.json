@@ -1,0 +1,34 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+        "ec2:RunInstances",
+        "ec2:StartInstances",
+        "ec2:StopInstances",
+        "ec2:TerminateInstances"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "DateGreaterThan": {
+          "aws:CurrentTime": "08:00:00Z"
+        },
+        "DateLessThan": {
+          "aws:CurrentTime": "18:00:00Z"
+        },
+        "NumericEquals": {
+          "aws:CurrentDayOfWeek": 1,
+          "aws:CurrentDayOfWeek": 2,
+          "aws:CurrentDayOfWeek": 3,
+          "aws:CurrentDayOfWeek": 4,
+          "aws:CurrentDayOfWeek": 5
+        }
+      }
+    }
+  ]
+}
+
+}
+"comment": "Users can only launch and manage EC2 instances during business hours (Monday to Friday, 8 AM to 6 PM)."
+}

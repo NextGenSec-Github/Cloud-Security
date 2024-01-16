@@ -1,0 +1,12 @@
+{
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Principal": {
+                "AWS": "INSERT_SERVICE_OR_PRINCIPAL_ARN"
+            },
+            "Action": "execute-api:Invoke",
+            "Resource": "INSERT_API_METHOD_ARN"
+        }
+    ]
+}

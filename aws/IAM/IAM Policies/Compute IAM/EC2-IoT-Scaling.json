@@ -1,0 +1,32 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+        "autoscaling:PutScalingPolicy",
+        "autoscaling:DeleteScalingPolicy",
+        "iot:Publish",
+        "lambda:InvokeFunction"
+      ],
+      "Resource": [
+        "arn:aws:autoscaling:us-east-1:123456789012:autoScalingGroup:my-group-name:*",
+        "arn:aws:iot:us-east-1:123456789012:topic/WeatherConditions",
+        "arn:aws:lambda:us-east-1:123456789012:function/AdjustScaling"
+      ],
+      "Condition": {
+        "IpAddress": {
+          "aws:SourceIp": "203.0.113.0/24"
+        },
+        "NumericGreaterThan": {
+          "iot:windSpeed": 70
+        }
+      }
+    }
+  ]
+}
+
+
+{
+  "comment": "This policy allows authorized users, identified by a specific IP address range, to create or delete Auto Scaling policies. It also grants permission to publish weather condition updates to an AWS IoT topic and invoke a Lambda function for scaling adjustments.\nHowever, it only allows these actions when the wind speed reported via IoT exceeds 70 mph, indicating severe weather conditions."
+}

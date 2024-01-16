@@ -1,0 +1,32 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+        "dynamodb:GetItem",
+        "dynamodb:PutItem",
+        "dynamodb:UpdateItem",
+        "dynamodb:DeleteItem"
+      ],
+      "Resource": "arn:aws:dynamodb:us-east-1:123456789012:table/MyTable"
+    },
+    {
+      "Effect": "Deny",
+      "Action": [
+        "dynamodb:GetItem",
+        "dynamodb:PutItem",
+        "dynamodb:UpdateItem",
+        "dynamodb:DeleteItem"
+      ],
+      "Resource": "arn:aws:dynamodb:us-east-1:123456789012:table/MyTable",
+      "Condition": {
+        "DateGreaterThanIfExists": {
+          "aws:CurrentTime": "2023-10-03T08:00:00Z",
+          "aws:CurrentTime": "2023-10-03T18:00:00Z"
+        }
+      }
+    }
+  ]
+}
+"comment": "Allows read and write access to specific DynamoDB tables, but only during business hours."

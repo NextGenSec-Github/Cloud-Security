@@ -1,0 +1,29 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+        "glue:GetDatabase",
+        "glue:GetTable",
+        "glue:SearchTables",
+        "glue:GetPartitions"
+      ],
+      "Resource": [
+        "arn:aws:glue:us-east-1:123456789012:catalog",
+        "arn:aws:glue:us-east-1:123456789012:database/MyDataLake",
+        "arn:aws:glue:us-east-1:123456789012:table/MyDataLake/*"
+      ],
+      "Condition": {
+        "StringEqualsIfExists": {
+          "aws:RequestTag/DataClassification": "Sensitive"
+        }
+      }
+    }
+  ]
+}
+
+}
+"comment":"Users can access Glue Data Catalog resources but only if the data is tagged as 'Sensitive'."
+
+}
