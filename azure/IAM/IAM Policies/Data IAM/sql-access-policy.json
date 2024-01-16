@@ -1,0 +1,25 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": "Microsoft.Sql/servers/databases/read",
+      "Resource": "YOUR_DATABASE_RESOURCE_ID",
+      "Condition": {
+        "IpAddress": {
+          "aws:SourceIp": [
+            "192.168.0.0/24",
+            "10.0.0.0/24"
+          ]
+        },
+        "DateLessThan": {
+          "aws:CurrentTime": "2023-09-30T17:00:00Z"
+        },
+        "DateGreaterThan": {
+          "aws:CurrentTime": "2023-09-30T09:00:00Z"
+        }
+      },
+      "Comment": "Allow read access to the specified database during business hours (9:00 AM to 5:00 PM) for specific IP ranges."
+    }
+  ]
+}
