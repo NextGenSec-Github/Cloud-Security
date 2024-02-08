@@ -20,9 +20,11 @@
 - Cloud Logging and Cloud Monitoring offer observability into applications and infrastructure, with costs incurred based on usage and log retention duration.
 - Increased logging and custom metrics lead to higher costs, necessitating careful management.
 - Implementing multi-tenant logging with exclusion rules helps filter out irrelevant logs to minimize costs.
-- Further details and tips on cost optimization for logs and monitoring are available for reference.
 
+## Enable GKE Usage Monitoring:
 
-
+- Enabling GKE Usage Monitoring allows automatic collection of granular metrics, exported to BigQuery for detailed analysis.
+- Insights into CPU, memory, storage, and network usage facilitate comparison with allocated resources, identifying over-allocated resources.
+- Namespace-based resource usage monitoring and utilization of labels for filtering enhance visibility into resource consumption and cost attribution.
 
 
