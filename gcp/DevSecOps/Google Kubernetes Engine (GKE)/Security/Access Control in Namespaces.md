@@ -9,6 +9,8 @@
 
 - There are several roles that can be assigned to users and service accounts in IAM that govern their level of access with GKE. RBAC's granular permissions build on the access already provided by IAM and cannot restrict access granted by it. As a result, for multi-tenant namespaced clusters, the assigned IAM role should grant minimal access.
 
+## Here's a list of common GKE IAM roles you can assign:
+
 ### Kubernetes Engine Admin:
 - Provides access to full management of clusters and their Kubernetes API objects. A user with this role will be able to create, edit and delete any resource in any cluster and subsequent namespaces.
 
