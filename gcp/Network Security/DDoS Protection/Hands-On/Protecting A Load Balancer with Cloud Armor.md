@@ -91,7 +91,7 @@ The network tag http-server ensures that the HTTP and Health Check firewall rule
 
 8. Click the Management tab.
 
-9. Under Metadata, Add this script to the user data
+9. Under Automation, Add this startup script
 
 ```bash
 #!/bin/bash
