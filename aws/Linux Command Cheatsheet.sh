@@ -6,7 +6,7 @@
 # SYSTEM 
 # ===============
 
-sudo -i         --> Login as root user 
+sudo su       --> Login as root user 
 exit            --> Exit from current user
 whoami          --> Which user logged_in
 pwd             --> Current Working Directory
@@ -82,7 +82,7 @@ dd       --> delete single line ,3dd => delete 3 lines, x = backspace
 u        --> Undo 
 Ctrl+r   --> Redo 
 / = Search, downside >>> "n" upside >>>"shft+n" → next and next 
-:%s/uma/umasankar/g or gc => Search & Replace all in text file completely.
+:%s/uma/umauser1/g or gc => Search & Replace all in text file completely.
 g + U + w & g+u+w => change uppercase to lower case
 g + U + G & g + u + gg => all line uppercase & Lowercase
 cntrl+z <<< /// >>> fg     --> Minimize and Maximize editor ( Must save& Exit before close terminal ) 
@@ -111,7 +111,7 @@ ifconfig                  --> Show all IP address ( IP_V4 , IP_v6 )
 ping [remote_host]        --> Ping Servers ( communication_check )
 netstat -pnltu            --> Check TCP / UDP lister's port's  
 host [domain_name]        --> Check Domain_IP
-hostname -i               --> Show local IP's address 
+hostname -i               #--> Show local IP's address 
 nslookup [domain_name]    --> Receive information about an internet domain
 
 ssh -i ec2-user@1.1.1.1        --> Communication establishment SERVER to SERVERS
@@ -119,8 +119,11 @@ ssh -keygen                    --> Creating Key_pairs
 ssh -p "1111" ec2-user@1.1.1.1 --> Connect to the host using a particular port
 sudo systemctl start sshd      --> Start sshd ( Demon_process )
 
+
+
+
 # =========================
-# NETWORKING/SSH
+# DISK COMMANDS
 # =========================
 
 df -hi            --> Check free and used space on mounted systems
@@ -130,6 +133,76 @@ free -h           --> Display free and usedmemory
 fdisk -l          --> Display disk partitions
 lshw              --> List Hardware info
 
+# =============
+# BOOTSTRAPPING 
+# =============
+
+1, Redhat LINUX -->
+---------------
+#! /bin/bash
+sudo yum install httpd -y
+systemctl start httpd
+sudo yum update
+
+2, Amazon Linux -->
+---------------
+#! /bin/bash
+sudo yum install httpd -y
+systemctl start httpd
+sudo yum update
+
+3, UBUNTU LINUX -->
+---------------
+#! /bin/bash
+sudo apt-get update
+sudo apt install apache2 -y
+systemctl start apache2
+sudo apt-get update
+
+# ============
+# CRYPTOGRAPHY 
+# ============
+
+echo "User1" -> Encrypt this variable / Password 
+echo -n "User1" | base64 -> En encrypted
+echo -n "uty54yt55t5t5t6" | base64 - decode -> Decrypted
+
+
+# ====================
+# FILE/DIR PERMISSIONS 
+# ====================
+
+# * R - read    -> 4
+# * W - Write   -> 2
+# * X - excute  -> 1
+
+ls -larth                      -->  List files / Dirs
+chmod 754 file_name            -->  Change permission File_name 
+chmod U=rwx,  G=rx-,    O=-r- file_name 
+chmod 777 User1  => Set full permission ( File / Directory )
+id                     --> See details about theactive users
+last                   --> Show the last system logins
+who                    -->  Display who is currently logged into the system
+sudo useradd User1  -->  Create new user
+passwd User1        -->  Create Password 
+finger ubuntu          -->  Show user information
+su - User1          --> Login as User1 ( USER ) 
+sudo userdel User1  -->  Delete user
+
+
+# =================
+# COMMAND SHORTCUTS
+# =================
+
+Ctrl + C        -->  Kill running process
+Ctrl + Z        -->  Stop the current process
+Ctrl + W        -->  Cut one word before the cursor
+Ctrl + U        -->  Cut part of the line before the cursor
+Ctrl + K        -->  Cut part of the line after the cursor
+Ctrl + Y        -->  Paste from clipboard
+Ctrl + R        -->  Recall the last command that matches the provided characters.
+!!              -->  run again last command 
+exit            -->  Log out of the current session
 
 
 
