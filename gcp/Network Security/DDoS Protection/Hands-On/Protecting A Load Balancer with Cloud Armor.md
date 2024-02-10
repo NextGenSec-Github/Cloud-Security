@@ -410,6 +410,75 @@ Create a Cloud Armor security policy with a denylist rule for the siege-vm.
 
 8. Set the following values, leave all other values at their defaults:
 
+9. Click Done.
+
+10. Click Next step.
+
+11. Click Add Target.
+
+12. For Type, select Load balancer backend service.
+
+13. For Target, select http-backend.
+
+14. Click Create policy.
+
+15. Wait for the policy to be created before moving to the next step.
+
+### Verify the security policy
+
+Verify that the ngs-vm cannot access the HTTP Load Balancer.
+
+1. Return to the SSH terminal of ngs-vm.
+
+2. To access the load balancer, run the following:
+
+```bash
+curl http://$LB_IP
+```
+
+3. Open a new tab in your browser and navigate to http://[LB_IP_v4]. Make sure to replace [LB_IP_v4] with the IPv4 address of the load balancer.
+
+4. Back in the SSH terminal of siege-vm, to simulate a load, run the following command:
+
+```bash
+siege -c 150 -t120s http://$LB_IP
+```
+
+The command will not generate any output.
+
+Explore the security policy logs to determine if this traffic is also blocked.
+
+5. In the console, navigate to Navigation menu > Network Security > Cloud Armor Policies.
+
+6. Click denylist-ngs.
+
+7. Click Logs.
+
+8. Click View policy logs.
+
+9. On the Logging page, make sure to clear all the text in the Query preview. Select resource to Application Load Balancer > http-lb-forwarding-rule > http-lb then click Apply.
+
+10. Now click Run Query.
+
+11. Expand a log entry in Query results.
+
+12. Expand httpRequest.
+
+The request should be from the siege-vm IP address. If not, expand another log entry.
+
+13. Expand jsonPayload.
+
+14. Expand enforcedSecurityPolicy.
+
+15. Notice that the configuredAction is to DENY with the name denylist-siege.
+
+Cloud Armor security policies create logs that can be explored to determine when traffic is denied and when it is allowed, along with the source of the traffic.
+
+# Congratulations!
+You configured an HTTP Load Balancer with backends in Region 1 and Region 2. Then, you stress tested the Load Balancer with a VM and denylisted the IP address of that VM with Cloud Armor. You were able to explore the security policy logs to identify why the traffic was blocked.
+
+
+
 
 
 
