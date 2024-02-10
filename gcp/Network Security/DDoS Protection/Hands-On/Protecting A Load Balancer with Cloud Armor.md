@@ -36,3 +36,44 @@ Make sure to include the /0 in the Source IPv4 ranges to specify all networks.
 
 - Health checks determine which instances of a load balancer can receive new connections. For HTTP load balancing, the health check probes to your load balanced instances come from addresses in the ranges 130.211.0.0/22 and 35.191.0.0/16. Your firewall rules must allow these connections.
 
+1. In the Firewall page, click Create Firewall Rule.
+
+2. Set the following values, leave all other values at their defaults:
+
+| Property            | Value                                      |
+|---------------------|--------------------------------------------|
+| Name                | default-allow-health-check                 |
+| Network             | default                                    |
+| Targets             | Specified target tags                      |
+| Target tags         | http-server                                |
+| Source filter       | IPv4 Ranges                                |
+| Source IPv4 ranges | 130.211.0.0/22, 35.191.0.0/16             |
+| Protocols and ports | Specified protocols and ports, TCP         |
+
+3. Click `Creata`
+
+
+## 2. Configure instance templates and create instance groups
+A managed instance group uses an instance template to create a group of identical instances. Use these to create the backends of the HTTP Load Balancer.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
