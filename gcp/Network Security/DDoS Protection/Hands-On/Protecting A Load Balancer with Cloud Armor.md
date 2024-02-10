@@ -15,7 +15,8 @@ Create a firewall rule to allow HTTP traffic to the backends.
 2. ICMP, internal, RDP, and SSH firewall rules. Each Google Cloud project starts with the default network and these firewall rules.
 
 3. Click Create Firewall Rule.
-Set the following values, leave all other values at their defaults:
+
+4. Set the following values, leave all other values at their defaults:
 
 | Property            | Value                                      |
 |---------------------|--------------------------------------------|
@@ -26,3 +27,12 @@ Set the following values, leave all other values at their defaults:
 | Source filter       | IPv4 Ranges                                |
 | Source IPv4 ranges | 0.0.0.0/0                                  |
 | Protocols and ports | Specified protocols and ports, TCP, type: 80|
+
+Make sure to include the /0 in the Source IPv4 ranges to specify all networks.
+
+5. Click `Create`
+
+## Create the health check firewall rules
+
+- Health checks determine which instances of a load balancer can receive new connections. For HTTP load balancing, the health check probes to your load balanced instances come from addresses in the ranges 130.211.0.0/22 and 35.191.0.0/16. Your firewall rules must allow these connections.
+
