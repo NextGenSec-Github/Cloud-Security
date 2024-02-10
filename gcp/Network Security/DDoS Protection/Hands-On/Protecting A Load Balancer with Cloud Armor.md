@@ -56,8 +56,65 @@ Make sure to include the /0 in the Source IPv4 ranges to specify all networks.
 ## 2. Configure instance templates and create instance groups
 A managed instance group uses an instance template to create a group of identical instances. Use these to create the backends of the HTTP Load Balancer.
 
+### Configure the instance templates
+An instance template is an API resource that you use to create VM instances and managed instance groups. Instance templates define the machine type, boot disk image, subnet, labels, and other instance properties.
+
+Create one instance template for Region 1 and one for Region 2 of your choice.
+
+1. In the Cloud console, go to Navigation menu (Navigation menu icon) > Compute Engine > Instance templates, and then click Create instance template.
+
+2. For Name, type Region 1-template.
+
+3. For Series, select E2.
+
+4. For Machine Type, select e2-micro.
+
+5. Click Advanced Options.
+
+6. Click Networking. Set the following value and leave all other values at their defaults:
+
+| Property     | Value        |
+|--------------|--------------|
+| Network tags | http-server  |
 
 
+7. Click default under Network interfaces. Set the following values and leave all other values at their defaults:
+
+| Property     | Value               |
+|--------------|---------------------|
+| Network      | default             |
+| Subnetwork   | default Region 1    |
+
+Click Done
+
+The network tag http-server ensures that the HTTP and Health Check firewall rules apply to these instances.
+
+8. Click the Management tab.
+
+9. Under Metadata, Add this script to the user data
+
+```bash
+#!/bin/bash
+
+# Update package list
+apt-get update
+
+# Install Apache
+apt-get install -y apache2
+
+# Start Apache service
+systemctl start apache2
+
+# Enable Apache service to start on boot
+systemctl enable apache2
+
+# Create a sample HTML file
+echo "<html><head><title>Hello, World!</title></head><body><h1>Hello, World!</h1></body></html>" > /var/www/html/index.html
+
+# Set proper permissions for the HTML file
+chown www-data:www-data /var/www/html/index.html
+chmod 644 /var/www/html/index.html
+```
 
 
 
