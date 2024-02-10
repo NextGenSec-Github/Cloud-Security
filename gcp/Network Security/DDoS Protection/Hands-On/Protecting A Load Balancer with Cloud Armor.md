@@ -162,14 +162,128 @@ Create a managed instance group in Region 1 and one in Region 2.
 | Initialization period           | 45                                      |
 | Notes                           | Managed instance groups offer autoscaling capabilities that allow you to aut  |
 
+Managed instance groups offer autoscaling capabilities that allow you to automatically add or remove instances from a managed instance group based on increases or decreases in load. Autoscaling helps your applications gracefully handle increases in traffic and reduces cost when the need for resources is lower. You just define the autoscaling policy and the autoscaler performs automatic scaling based on the measured load.
 
+### Now repeat the same procedure to create a second instance group for Region 2-mig in Region 2:
 
+1. Click Create Instance group.
 
+2. Set the following values, leave all other values at their defaults:
 
+| Property                        | Value                          |
+|---------------------------------|--------------------------------|
+| Name                            | Region 2-mig                   |
+| Location                        | Multiple zones                 |
+| Region                          | Region 2                       |
+| Instance template               | Region 2-template              |
+| Minimum number of instances     | 1                              |
+| Maximum number of instances     | 2                              |
+| Autoscaling signals             | Click dropdown                 |
+| Signal type                     | CPU utilization                |
+| Target CPU utilization          | 80, click Done.                |
+| Initialization period           | 45                             |
 
+3. Click `Create`
 
+### Verify the backends
+Verify that VM instances are being created in both regions and access their HTTP sites.
 
+1. Still in Compute Engine, click VM instances in the left menu.
 
+2. Notice the instances that start with Region 1-mig and Region 2-mig. These instances are part of the managed instance groups.
 
+3. Click on the External IP of an instance of Region 1-mig. You should see the Client IP (your IP address), the Hostname (starts with Region 1-mig) and the Server Location (a zone in Region 1).
+
+4. Click on the External IP of an instance of Region 2-mig. You should see the Client IP (your IP address), the Hostname (starts with Region 2-mig) and the Server Location (a zone in Region 2).
+
+## 3. Configure the HTTP Load Balancer
+
+### Start the configuration
+1.In the Cloud console, click Navigation menu (Navigation menu icon) > click Network Services > Load balancing, and then click Create load balancer.
+
+2. Under Application Load Balancer (HTTP/S), click on Start configuration.
+
+3. Select From Internet to my VMs or serverless services, and click Continue.
+
+4. Set the New HTTP(S) Load Balancer Name to http-lb.
+
+### Configure the frontend
+The host and path rules determine how your traffic will be directed. For example, you could direct video traffic to one backend and static traffic to another backend. However, you are not configuring the Host and path rules in this lab.
+
+1. Click on Frontend configuration.
+
+2. Specify the following, leaving all other values at their defaults:
+
+| Property   | Value      |
+|------------|------------|
+| Protocol   | HTTP       |
+| IP version | IPv4       |
+| IP address | Ephemeral  |
+| Port       | 80         |
+
+3. Click Done.
+
+4. Click Add Frontend IP and port.
+
+5. Specify the following, leaving all other values at their defaults:
+
+| Property   | Value         |
+|------------|---------------|
+| Protocol   | HTTP          |
+| IP version | IPv6          |
+| IP address | Auto-allocate |
+| Port       | 80            |
+
+6. Click `Done`
+
+HTTP(S) load balancing supports both IPv4 and IPv6 addresses for client traffic. Client IPv6 requests are terminated at the global load balancing layer, then proxied over IPv4 to your backends.
+
+### Configure the backend
+Backend services direct incoming traffic to one or more attached backends. Each backend is composed of an instance group and additional serving capacity metadata.
+
+1. Click on Backend configuration.
+
+2. For Backend services & backend buckets, click Create a backend service.
+
+3. Set the following values, leave all other values at their defaults:
+
+| Property        | Value            |
+|-----------------|------------------|
+| Name            | http-backend     |
+| Instance group  | Region 1-mig     |
+| Port numbers    | 80               |
+| Balancing mode  | Rate             |
+| Maximum RPS     | 50               |
+| Capacity        | 100              |
+
+This configuration means that the load balancer attempts to keep each instance of Region 1-mig at or below 50 requests per second (RPS).
+
+4. Click Done.
+
+5. Click Add a backend.
+
+6. Set the following values, leave all other values at their defaults:
+
+| Property                           | Value            |
+|------------------------------------|------------------|
+| Instance group                     | Region 2-mig     |
+| Port numbers                       | 80               |
+| Balancing mode                     | Utilization      |
+| Maximum backend utilization        | 80               |
+| Capacity                           | 100              |
+
+This configuration means that the load balancer attempts to keep each instance of Region 2-mig at or below 80% CPU utilization.
+
+7. Click Done.
+
+8. For Health Check, select Create a health check.
+
+9. Set the following values, leave all other values at their defaults:
+
+| Property   | Value       |
+|------------|-------------|
+| Name       | http-health-check |
+| Protocol   | TCP         |
+| Port       | 80          |
 
 
