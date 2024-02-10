@@ -116,12 +116,51 @@ chown www-data:www-data /var/www/html/index.html
 chmod 644 /var/www/html/index.html
 ```
 
+11. Click `Create.`
 
+12. Wait for the instance template to be created.
 
+### Create another instance template for subnet-b by copying Region 1-template:
 
+1. Click on Region 1-template and then click on the +CREATE SIMILAR option from the top.
 
+2. For Name, type Region 2-template.
 
+3. Click Advanced Options.
 
+4. Click Networking.
+
+5. Ensure http-server is added as a network tag.
+
+6. In Network interfaces, for Subnetwork, select default (Region 2).
+
+7. Click Done.
+
+8. Click Create.
+
+### Create the managed instance groups
+
+Create a managed instance group in Region 1 and one in Region 2.
+
+1. Still in Compute Engine, click Instance groups in the left menu.
+
+2. Click Create instance group.
+
+3. Set the following values, leave all other values at their defaults:
+
+| Property                        | Value                                   |
+|---------------------------------|-----------------------------------------|
+| Name                            | Region 1-mig (if required, remove extra space from the name) |
+| Location                        | Multiple zones                          |
+| Region                          | Region 1                                |
+| Instance template               | Region 1-template                       |
+| Minimum number of instances     | 1                                       |
+| Maximum number of instances     | 2                                       |
+| Autoscaling signals             | Click dropdown                          |
+| Signal type                     | CPU utilization                        |
+| Target CPU utilization          | 80, click Done.                        |
+| Initialization period           | 45                                      |
+| Notes                           | Managed instance groups offer autoscaling capabilities that allow you to aut  |
 
 
 
