@@ -1,6 +1,8 @@
-#!/bin/bash
+# =======================================
+# GCP CLI NETWORKING COMMANDS CHEATSHEET
+# =======================================
 
-# GCP CLI Networking Commands Cheatsheet
+# GENERAL COMMANDS
 
 # Command to list all networks in the current project
 gcloud compute networks list
@@ -37,3 +39,20 @@ gcloud compute networks subnets create SUBNET_NAME --network=NETWORK_NAME --rang
 
 # Command to delete a subnet
 gcloud compute networks subnets delete SUBNET_NAME
+
+# ===============
+# TROUBLESHOOTING
+# ===============
+
+
+
+
+
+
+
+
+
+
+
+
+
