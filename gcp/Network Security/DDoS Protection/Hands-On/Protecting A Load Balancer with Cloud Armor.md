@@ -286,4 +286,131 @@ This configuration means that the load balancer attempts to keep each instance o
 | Protocol   | TCP         |
 | Port       | 80          |
 
+Health checks determine which instances receive new connections. This HTTP health check polls instances every 5 seconds, waits up to 5 seconds for a response and treats 2 successful or 2 failed attempts as healthy or unhealthy, respectively.
+
+10. Click Save.
+
+11. Check the Enable Logging box.
+
+12. Set the Sample Rate to 1.
+
+13. Click Create to create the backend service.
+
+14. Click Ok.
+
+### Review and create the HTTP Load Balancer
+1. Click on Review and finalize.
+
+2. Review the Backend and Frontend services.
+
+3. Click on Create.
+
+4. Wait for the load balancer to be created.
+
+5. Click on the name of the load balancer (http-lb).
+
+6. Note the IPv4 and IPv6 addresses of the load balancer for the next task. They will be referred to as [LB_IP_v4] and [LB_IP_v6], respectively.
+
+## 4. Test the HTTP Load Balancer
+
+### Access the HTTP Load Balancer
+- To test IPv4 access to the HTTP Load Balancer, open a new tab in your browser and navigate to http://[LB_IP_v4]. Make sure to replace [LB_IP_v4] with the IPv4 address of the load balancer.
+
+- If you have a local IPv6 address, try the IPv6 address of the HTTP Load Balancer by navigating to http://[LB_IP_v6]. Make sure to replace [LB_IP_v6] with the IPv6 address of the load balancer.
+
+### Stress test the HTTP Load Balancer
+Create a new VM to simulate a load on the HTTP Load Balancer using siege. Then, determine if traffic is balanced across both backends when the load is high.
+
+1. In the console, navigate to Navigation menu (Navigation menu icon) > Compute Engine > VM instances.
+
+2. Click Create instance.
+
+3. Set the following values, leave all other values at their defaults:
+
+| Property   | Value    |
+|------------|----------|
+| Name       | ngs-vm |
+| Region     | Region 3 |
+| Zone       | Zone 3   |
+| Series     | E2       |
+
+Given that Region 3 is closer to Region 1 than to Region 2, traffic should be forwarded only to Region 1-mig (unless the load is too high).
+
+4. Click Create.
+
+5. Wait for the ngs-1 instance to be created.
+
+6. For ngs-1, click SSH to launch a terminal and connect.
+
+7. Run the following command, to install siege:
+
+8. Run the following command, to install siege:
+
+```bash
+sudo apt-get -y install siege
+```
+
+9. To store the IPv4 address of the HTTP Load Balancer in an environment variable, run the following command, replacing [LB_IP_v4] with the IPv4 address:
+
+```bash
+export LB_IP=[LB_IP_v4]
+```
+
+`0. To simulate a load, run the following command:
+
+```bash
+siege -c 150 -t120s http://$LB_IP
+```
+
+11. In the Cloud console, on the Navigation menu (Navigation menu icon), click Network Services > Load balancing.
+
+12.Click Backends.
+
+13. Click http-backend.
+
+14. Navigate to http-lb.
+
+15. Click on the Monitoring tab.
+
+16. Monitor the Frontend Location (Total inbound traffic) between North America and the two backends for 2 to 3 minutes.
+ 
+
+At first, traffic should just be directed to Region 1-mig but as the RPS increases, traffic is also directed to Region 2.
+
+This demonstrates that by default traffic is forwarded to the closest backend but if the load is very high, traffic can be distributed across the backends.
+
+17. Return to the SSH terminal of siege-vm.
+
+18. Press CTRL+C to stop siege if it's still running.
+
+## 5. Denylist the siege-vm
+Use Cloud Armor to denylist the ngs-vm from accessing the HTTP Load Balancer.
+
+### Create the security policy
+Create a Cloud Armor security policy with a denylist rule for the siege-vm.
+
+1. In the console, navigate to Navigation menu (Navigatio menu icon) > Compute Engine > VM instances.
+
+2. Note the External IP of the ngs-vm. This will be referred to as [NGS_IP].
+
+3. In the Cloud console, navigate to Navigation menu > Network Security > Cloud Armor Policies.
+
+4. Click Create policy.
+
+5. Set the following values, leave all other values at their defaults:
+
+| Property            | Value         |
+|---------------------|---------------|
+| Name                | denylist-ngs  |
+| Default rule action | Allow         |
+
+6. Click Next step.
+
+7. Click Add a rule.
+
+8. Set the following values, leave all other values at their defaults:
+
+
+
+
 
