@@ -3,7 +3,7 @@
 # ========================
 
 # ===============
-# SYSTEM COMMANDS
+# SYSTEM 
 # ===============
 
 sudo -i         --> Login as root user 
@@ -41,6 +41,95 @@ history          --> View history
      history -c                    --> Delete all command in history
      history -d 32,26.02           --> Delete particular command in history
      history then # !10            --> Run a command again in history list
+
+
+# =======================
+# DIRECTORY/FILES
+# =======================
+
+mkdir Dir_1             --> Create a directory
+    mkdir Tester{0..5}     => Create 6 dir at time
+    rmdir -f Tester{0..5}  => Delete 6 dir at time.
+cp -r Dir_1 Dir_2      --> Copy Source _ Distination_Directory 
+mv Dir_1 Dir_2         --> Move Source _ Distination_Directory 
+diff Dir_1 Dir_2       --> Compare two DIRS and display differences.
+--------------------------------------------------------------------------
+touch File_1                             --> Create a File without content
+    touch Developer{0..5}  => Create 6 dir at time
+    rm -f Developer{0..5}  => Delete 6 dir at time
+echo " My linux commands " > testing.txt --> Create a file with content
+cat > File_2                             --> Create a file with content 
+cp File_1 Dir_2         --> Copy Source files _ Distination_Directory 
+mv File_2 Dir_2         --> Move Source files _ Distination_Directory
+diff File_1 File_2     --> Compare two files and display differences.
+--------------------------------------------------------------------------- 
+tail -f /var/log/syslog --> Check System logs @ Run_time ( IMPORTANT REAL TIME )
+less updates.txt <<< /// >>> more updates.txt => content page by page view
+head -10 updates.txt    --> Shows first 10 lines of file 
+tail -10 updates.txt    --> Shows last 10 lines of file
+
+# =======================
+# VI/VIM EDITOR
+# =======================
+
+:wq      --> Save & Quit
+:q!      --> quit force without saves
+3yy      --> Copy 3 lines <<< /// >>> p => Paste a lines
+dd       --> delete single line ,3dd => delete 3 lines, x = backspace
+:%d      --> Delete all lines
+:set nu / :set nonu       --> Numbers settings
+:2       --> Navigate that line
+u        --> Undo 
+Ctrl+r   --> Redo 
+/ = Search, downside >>> "n" upside >>>"shft+n" → next and next 
+:%s/uma/umasankar/g or gc => Search & Replace all in text file completely.
+g + U + w & g+u+w => change uppercase to lower case
+g + U + G & g + u + gg => all line uppercase & Lowercase
+cntrl+z <<< /// >>> fg     --> Minimize and Maximize editor ( Must save& Exit before close terminal ) 
+gg          --> switch to the first line
+shift + g   --> switch to the last line
+
+# =========================
+# FILE COMPRESSION/TRANSFER
+# =========================
+
+scp file_1 ec2-user@1.1.1.1 /home/ec2-user --> File transfer Server_1 to Server_2
+wget <URL>                     --> Download any tool / file from internet
+sudo curl -O [link]            --> Transfer data to or from a server to Servers
+tar -cvzf [file/directory]     -->  Archive   [file/directory] using TAR_FORMAT
+tar -xvzf [file/directory.tar] --> Un-Archive [file/directory] using TAR_FORMAT
+gzip [file_name]               --> Archive   [file/directory] using  gzip_FORMAT
+gunzip [file_name.gz]          --> Un-Archive [file/directory] using gzip_FORMAT
+
+
+# =========================
+# NETWORKING/SSH
+# =========================
+
+nmtui                     --> Change Host_name
+ifconfig                  --> Show all IP address ( IP_V4 , IP_v6 )
+ping [remote_host]        --> Ping Servers ( communication_check )
+netstat -pnltu            --> Check TCP / UDP lister's port's  
+host [domain_name]        --> Check Domain_IP
+hostname -i               --> Show local IP's address 
+nslookup [domain_name]    --> Receive information about an internet domain
+
+ssh -i ec2-user@1.1.1.1        --> Communication establishment SERVER to SERVERS
+ssh -keygen                    --> Creating Key_pairs
+ssh -p "1111" ec2-user@1.1.1.1 --> Connect to the host using a particular port
+sudo systemctl start sshd      --> Start sshd ( Demon_process )
+
+# =========================
+# NETWORKING/SSH
+# =========================
+
+df -hi            --> Check free and used space on mounted systems
+lsblk             --> List Block 
+du -ah , -sh      --> See disk usage for all filesand directories.
+free -h           --> Display free and usedmemory
+fdisk -l          --> Display disk partitions
+lshw              --> List Hardware info
+
 
 
 
