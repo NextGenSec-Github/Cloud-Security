@@ -42,5 +42,14 @@ organizations list-delegated-services-for-account --account-id <account-id> --pr
 # PRIVILEGE ESCALATION
 # ====================
 
+# Instance Metdata Service V2 has added protections with sessions authentication with tokens
+TOKEN=`curl -X PUT "http://169.254.169.254/latest/api/token" -H "X-aws-ec2-metadata-token-ttl-seconds: 21600"`
+curl -H "X-aws-ec2-metadata-token: $TOKEN" -v http://169.254.169.254/latest/meta-data/
+
+
+
+
+
+
 
 
