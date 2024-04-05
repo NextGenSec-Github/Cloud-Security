@@ -21,6 +21,7 @@ backdoor_lambda_function('my-function', '123456789012')
 '''
 - The noncompliant code uses the AWS SDK’s add_permission method to modify the resource-based policy of the Lambda function.
 - It adds a permission statement that allows the specified external AWS account to invoke the function.
+- It checks the HTTP status code in the response to ensure that the backdoor was added successfully.
 '''
 
 
