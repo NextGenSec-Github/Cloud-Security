@@ -12,6 +12,16 @@ aws s3 ls
 aws iam list-users
 
 # Retrieves the policy attached to a role
+aws iam get-role-policy
+
+# Retrieves the policy attached to a group
+aws iam get-group-policy
+
+# Retrieves the policy attached to a user
+aws iam get-user-policy
+
+# Lists policies attached to a role
+aws iam list-attached-role-policies
 
 # List all rds instances
 aws rds describe-db-instance
