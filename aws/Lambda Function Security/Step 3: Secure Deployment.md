@@ -40,6 +40,15 @@ aws lambda sign --function-name MyLambdaFunction --key-id <KMS_Key_ID>
 ```
 This command signs the deployment package of the Lambda function MyLambdaFunction using the specified KMS key.
 
+### 3. Encryption
+Encrypt sensitive data within your deployment packages using AWS KMS. Here's how to encrypt a file using AWS CLI:
+```bash
+aws kms encrypt --key-id <KMS_Key_ID> --plaintext fileb://my_sensitive_data.txt --output text --query CiphertextBlob > encrypted_data.txt
+```
+
+This command encrypts the contents of my_sensitive_data.txt using the specified KMS key and saves the encrypted data to encrypted_data.txt.
+
+
 
 
 
