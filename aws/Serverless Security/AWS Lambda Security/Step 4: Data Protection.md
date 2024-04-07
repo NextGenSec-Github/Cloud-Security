@@ -24,14 +24,26 @@ aws kms create-key --description "MyEncryptionKey"
 ```
 This command creates a customer master key (CMK) in AWS KMS named MyEncryptionKey. You can then specify this key when creating an S3 bucket to enable server-side encryption with KMS.
 
+## Encryption in Transit
+Encrypting data in transit protects information as it travels between different components of your serverless architecture. Let's examine how to enable encryption in transit for API Gateway endpoints:
+
+### 1. HTTPS Protocol
+API Gateway supports HTTPS protocol, which encrypts data transmitted between clients and the API Gateway endpoint. You can enable HTTPS for API Gateway stages using the AWS Management Console or AWS CLI.
+
+### 2. Custom Domain with ACM
+If you're using a custom domain for your API Gateway endpoint, you can provision an SSL/TLS certificate from AWS Certificate Manager (ACM) and associate it with your custom domain. This ensures encrypted communication between clients and your API.
 
 
+## Best Practices for Data Protection
+In addition to encrypting data at rest and in transit, consider the following best practices for data protection:
 
+- **Data Minimization:** Minimize the amount of sensitive data stored or processed by your Lambda functions to reduce the risk of data exposure.
 
+- **Key Rotation:** Regularly rotate encryption keys used for data encryption to mitigate the impact of potential key compromises.
 
+- **Access Controls:** Implement fine-grained access controls using IAM policies to restrict access to encrypted data only to authorized entities.
 
-
-
+- **Data Classification:** Classify data based on its sensitivity level and apply appropriate encryption and access controls accordingly.
 
 
 
