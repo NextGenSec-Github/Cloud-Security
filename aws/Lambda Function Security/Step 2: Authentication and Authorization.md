@@ -88,6 +88,8 @@ Implementing the principle of least privilege is crucial for maintaining the sec
 
 - **Role Separation:** Separate roles for different Lambda functions based on their functionality and access requirements. This ensures that each function has its own set of permissions tailored to its specific needs.
 
+This section provides practical examples of using AWS IAM for authentication and authorization of AWS Lambda functions. By following these examples and best practices, you can enhance the security posture of your serverless applications.
+
 
 
 
