@@ -30,3 +30,20 @@ phases:
     commands:
       - echo Build completed on `date`
 ```
+This buildspec.yml file defines a CodeBuild build process that installs dependencies specified in requirements.txt before executing a custom build script.
+
+### 2. Code Signing
+Implement code signing for your deployment packages using AWS Key Management Service (KMS). Here's an example of how to sign a deployment package using AWS CLI:
+
+```bash
+aws lambda sign --function-name MyLambdaFunction --key-id <KMS_Key_ID>
+```
+This command signs the deployment package of the Lambda function MyLambdaFunction using the specified KMS key.
+
+
+
+
+
+
+
+
