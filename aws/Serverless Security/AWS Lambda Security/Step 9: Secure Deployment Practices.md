@@ -52,10 +52,55 @@ my-lambda-function/
 ├── requirements.txt
 └── template.yaml
 ```
+This structure includes the Lambda function code (lambda_function.py), dependencies (requirements.txt), and CloudFormation template (template.yaml).
 
+### 2. Continuous Integration (CI)
+Integrate AWS CodeBuild into your CI pipeline to build and test Lambda functions:
 
+```yaml
+version: 0.2
 
+phases:
+  install:
+    runtime-versions:
+      python: 3.9
+  build:
+    commands:
+      - pip install -r requirements.txt
+  post_build:
+    commands:
+      - aws cloudformation package --template-file template.yaml --s3-bucket my-deployment-bucket --output-template-file packaged-template.yaml
+artifacts:
+  type: zip
+  files:
+    - packaged-template.yaml
+```
+This CodeBuild buildspec.yml file installs dependencies and packages the CloudFormation template.
 
+### 3. Continuous Deployment (CD)
+Automate deployment using AWS CodePipeline:
+```yaml
+Resources:
+  MyPipeline:
+    Type: AWS::CodePipeline::Pipeline
+    Properties:
+      Stages:
+        - Name: Source
+          Actions:
+            - Name: SourceAction
+              ActionTypeId:
+                Category: Source
+                Owner: AWS
+                Version: 1
+                Provider: CodeCommit
+              Configuration:
+                RepositoryName: my-lambda-repo
+                BranchName: main
+              OutputArtifacts:
+                - Name: SourceOutput
+         ...
+```
+This CloudFormation template snippet creates a CodePipeline pipeline for continuous deployment.
 
 
 
