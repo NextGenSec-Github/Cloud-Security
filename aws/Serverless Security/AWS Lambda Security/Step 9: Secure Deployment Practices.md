@@ -102,9 +102,29 @@ Resources:
 ```
 This CloudFormation template snippet creates a CodePipeline pipeline for continuous deployment.
 
+## Secrets Management
+Effectively manage secrets and sensitive configuration parameters used by Lambda functions. Let's explore practical approaches to secrets management:
 
+### 1. AWS Secrets Manager
+Store secrets in AWS Secrets Manager:
+```bash
+aws secretsmanager create-secret --name MySecret --secret-string '{"username":"admin","password":"secretpassword"}'
+```
+This AWS CLI command creates a secret named MySecret in AWS Secrets Manager.
 
+### 2. Parameter Store
+Store configuration parameters in AWS Systems Manager Parameter Store:
+```bash
+aws ssm put-parameter --name /MyApp/MyParameter --value "parameter-value" --type SecureString
+```
+This command stores a parameter named /MyApp/MyParameter in Parameter Store as a secure string.
 
+## Best Practices for Secure Deployment
+In addition to leveraging IaC, secure deployment pipelines, and secrets management, consider the following best practices:
+
+- **Immutable Infrastructure:** Treat infrastructure as immutable to maintain consistency and security.
+- **Least Privilege Deployment:** Grant minimum necessary permissions to deployment pipelines and tools.
+- **Monitoring and Auditing:** Implement monitoring and auditing mechanisms to track deployment activities.
 
 
 
