@@ -21,5 +21,3 @@ Lambda functions, like any other application, are subject to various security co
 In the subsequent sections of this documentation, we will delve into each of these security considerations in detail, providing practical guidance, code examples, and best practices for securing AWS Lambda functions.
 
 ---
-
-This document provides an introduction to AWS Lambda function security, emphasizing the importance of security in serverless computing and outlining key security considerations for Lambda functions. In the following sections, we will explore each security consideration in depth, offering practical guidance and code examples for implementing security best practices.
