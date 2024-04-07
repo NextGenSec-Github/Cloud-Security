@@ -32,5 +32,62 @@ In the trust-policy.json file, define the trust relationship policy allowing Lam
 
 ```
 
+Next, attach a policy granting necessary permissions to the role:
+
+```bash
+aws iam attach-role-policy --role-name LambdaExecutionRole \
+    --policy-arn arn:aws:iam::aws:policy/AWSLambdaExecute
+```
+
+### 2. Assign IAM Policies
+IAM policies explicitly grant or deny permissions to AWS resources. Let's create a policy allowing a Lambda function to read from an S3 bucket:
+
+```json
+
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": "s3:GetObject",
+      "Resource": "arn:aws:s3:::example-bucket/*"
+    }
+  ]
+}
+```
+
+Attach this policy to the IAM role created for the Lambda function. Now, the function has permission to read objects from the specified S3 bucket.
+
+### 3. Invoke Permissions
+Lambda functions can be invoked by various entities. Let's grant an S3 bucket permission to invoke a Lambda function:
+```json
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Principal": {
+        "Service": "s3.amazonaws.com"
+      },
+      "Action": "lambda:InvokeFunction",
+      "Resource": "arn:aws:lambda:us-east-1:123456789012:function:example-function"
+    }
+  ]
+}
+
+```
+This policy allows the specified S3 bucket to invoke the Lambda function named example-function.
+
+## Best Practices for Least Privilege Access
+
+Implementing the principle of least privilege is crucial for maintaining the security of your Lambda functions. Consider the following best practices:
+
+- **Minimal Permissions:** Assign only the permissions necessary for Lambda functions to perform their intended tasks. Regularly review and refine permissions to minimize the attack surface.
+
+- **Regular Audits:** Conduct periodic audits of IAM roles, policies, and permissions to identify and address any security gaps. Remove unused permissions and update policies in response to changing requirements.
+
+- **Role Separation:** Separate roles for different Lambda functions based on their functionality and access requirements. This ensures that each function has its own set of permissions tailored to its specific needs.
+
+
 
 
