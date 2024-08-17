@@ -11,3 +11,4 @@ kubectl get service --all-namespaces
 kubectl get deployments --all-namespaces
 kubectl get nodes --show-labels
 kubectl get pods --all-namespaces -o json
+kubectl get namespaces # Get namespaces
