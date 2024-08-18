@@ -1,5 +1,6 @@
 terraform init
 terraform plan
+terraform plan -var "var=value" # Setting a var in command line
 terraform apply
 terraform graph
 
