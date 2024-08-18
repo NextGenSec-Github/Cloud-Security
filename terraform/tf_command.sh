@@ -5,7 +5,7 @@ terraform apply
 terraform graph
 terraform output # List all defined outputs
 terraform output variable_name # Rtrieve the value of a specific output
-
+public_ip=$(terraform output -raw public_ip) # Putting output variables into env variables
 
 # ==============
 # LOCAL GIT REPO
