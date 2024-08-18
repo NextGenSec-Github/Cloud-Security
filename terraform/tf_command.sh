@@ -3,6 +3,8 @@ terraform plan
 terraform plan -var "var=value" # Setting a var in command line
 terraform apply
 terraform graph
+terraform output # List all defined outputs
+terraform output variable_name # Rtrieve the value of a specific output
 
 
 # ==============
